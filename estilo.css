@@ -1,0 +1,804 @@
+
+
+
+/* Diseños basicos para la pagina y contenedores */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #151E3F;
+    user-select: none;
+}
+
+
+body{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+/* Diseño para la scrollbar */
+body::-webkit-scrollbar{
+    width: 15px;
+    transition: all 2s ease;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #ffffff19;
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background: #d596ef2a;
+}
+
+:root{
+    --color-fondo: #151E3F;
+}
+
+
+.contenedor{
+    position: relative;
+    display: flex;
+    height: 100%;
+    gap: 100px 100px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+
+.btn{
+    position: relative;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    z-index: 2;
+    touch-action: none;
+    background: none;
+}
+
+
+.decoracion-pagina{
+    position: absolute;
+    z-index: 1;
+    filter: blur(20px);
+    pointer-events: none;
+    opacity: .4;
+}
+
+.decoracion-pagina-1{
+    width: 300px;
+    height: 300px;
+    background: rgb(32,224,213);
+    background: linear-gradient(90deg, rgba(32,224,213,1) 0%,
+    rgba(21,196,247,1) 50%, rgba(69,252,109,1) 100%);
+    border-radius: 100px;
+    transform: rotate(45deg);
+    left: 10px;
+    top: 1px;
+}
+
+
+.decoracion-pagina-2{
+    width: 200px;
+    height: 200px;
+    background: rgb(176,88,231);
+    background: linear-gradient(90deg, rgba(176,88,231,1) 0%
+    , rgba(232,55,136,1) 50%, rgba(249,213,80,1) 100%);
+    border-radius: 50%;
+    transform: rotate(45deg);
+    left: 1100px;
+    top: 90px;
+}
+
+.decoracion-pagina-3{
+    width: 350px;
+    height: 350px;
+    background: rgb(199,116,168);
+    background: linear-gradient(90deg, rgba(199,116,168,1) 0%,
+    rgba(137,82,255,1) 50%, rgba(60,246,12,1) 100%);
+    border-radius: 50px;
+    transform: rotate(69deg);
+    left: 300px;
+    top: 450px;
+}
+
+
+/* Diseños de los botones y con su enumeracion */
+
+/* boton 9 */
+
+
+.btn-9{
+    position: relative;
+    color: rgb(59, 59, 173);
+    overflow: hidden;
+    transition: all .4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.btn-9::before{
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    border: 3px solid rgb(59, 59, 173);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.btn-9::after{
+    position: absolute;
+    content: "";
+    background:  linear-gradient(to right, #e721df, #bd65fd, #9187ff,
+    #6d9fff,#339cf0,#1f91f0, #1084ee);
+    width: 150%;
+    height: 400%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all .4s ease;
+}
+
+
+
+.btn-9:hover:after{
+    animation: btn9-after 1s linear infinite;
+    z-index: -10;
+    opacity: 1;
+}
+
+.btn-9:hover::before{
+    border: 3px solid rgba(59, 59, 173, 1);
+    z-index: 2;
+}
+
+.btn-9:hover{
+    color: rgb(206, 206, 245);
+    background-color: #151E3F;
+    z-index: 3;
+    box-shadow: 0px 0px 10px rgb(49, 128, 255);
+}
+
+
+@keyframes btn9-after {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+  /* boton 10 */
+
+.btn-10{
+    transition: all .3s ease;
+    text-align: center;
+    
+}
+
+.btn-10-cont{
+    position: relative;
+    background: none;
+    z-index: 10;
+    transition: all .4s ease;
+}
+    
+
+.btn-10::after{
+    content: "";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: skew(20deg, 0deg);
+    background-color: #000000;
+    z-index: -1;
+    transition: all .4s ease;
+}
+
+
+.btn-10-cont1{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: skew(20deg, 0deg);
+    border-right: 5px solid #eafff3;
+    background-color: #ec21ff;
+    z-index: 1;
+    transition: all .4s ease;
+    transition-delay: .1s;
+    opacity: 1;
+    pointer-events: none;
+}
+
+
+.btn-10-cont2{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: skew(20deg, 0deg);
+    border-right: 5px solid #eafff3;
+    background-color: #12c5d9;
+    z-index: 2;
+    transition: all 1s ease;
+    transition-delay: .3s;
+    opacity: 1;
+    pointer-events: none;
+}
+
+
+.btn-10-cont3{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: skew(20deg, 0deg);
+    border-right: 5px solid #eafff3;
+    background-color: #f01010;
+    z-index: 3;
+    transition: all 1.5s ease;
+    transition-delay: .5s;
+    opacity: 1;
+    pointer-events: none;
+}
+
+
+.btn-10:hover .btn-10-cont1{
+    position: absolute;
+    border-right: 14px solid #eafff3;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.btn-10:hover .btn-10-cont2{
+    position: absolute;
+    border-right: 14px solid #eafff3;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.btn-10:hover .btn-10-cont3{
+    position: absolute;
+    border-right: 14px solid #eafff3;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    
+}
+
+.btn-10:hover .btn-10-cont{
+    color: white;
+    text-shadow: 0px 0px 5px white;
+    z-index: 20;
+}
+
+.btn-10:hover .btn-10-cont1,
+.btn-10:hover .btn-10-cont2,
+.btn-10:hover .btn-10-cont3{
+    opacity: 1;
+}
+
+
+/* boton 11 */
+.btn-11-cont{
+position: relative;
+}
+
+.btn-11{
+    position: relative;
+    width: 140px;
+    height: 20px;
+    background-color: #ed1b1b;
+    text-align: center;
+    box-shadow: inset 0 1px 0 #ae1313, inset 0 -5px 0 #820909;
+    border-radius: 5px; 
+}
+
+
+.btn-11-icono{
+    position: absolute;
+    text-align: center;
+    background: none;
+    bottom: 20px;
+}
+
+
+.btn-11:active{
+    top: 5px;
+    box-shadow: inset 0 1px 0 #ae1313, inset 0 3px 0px #ed1b1b;
+}
+
+
+.btn-11-cont::before{
+    content: '';
+    height: 260%;
+    width: 100%;
+    padding: 4px;
+    position: absolute;
+    bottom: -30px;
+    left: -4px;
+    z-index: 0;
+    background-color: black;
+    border-radius: 5px;
+}
+
+
+/* boton 12 */
+
+
+
+.btn-12-cont{
+    position: relative;
+    background-color: #049741;
+    border-radius: 35px;
+    width: 220px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid rgb(230, 224, 224);
+    transition: all .5s ease;
+}
+
+
+
+.btn-12{
+    position: absolute;
+    background-color: #ebe0e0;
+    border-radius: 50%;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    left: 7px;
+    transition: all .5s ease;
+}
+
+.btn-12-cont-activado{
+    background-color: #0bd218;
+    box-shadow: 0px 0px 10px #0bd218;
+}
+
+.btn-12-activado{
+    left: 160px;
+}
+
+
+
+/* boton 13 */
+
+
+.btn-13{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 212px;
+    height: 59px;
+}
+
+
+.btn-13::after{
+    content: "";
+    position: absolute;
+    border: 2px solid rgb(169, 181, 246);
+    top: 50px;
+    left: 180px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .3s ease;
+    pointer-events: none;
+}
+
+
+.btn-13::before{
+    content: "";
+    position: absolute;
+    border: 2px solid rgb(169, 181, 246);
+    bottom: 50px;
+    right: 180px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .3s ease;
+    pointer-events: none;
+}
+
+
+.btn-13:hover::after{
+    top: 7px;
+    left: 15px;
+    opacity: 1;
+}
+
+
+.btn-13:hover::before{
+    bottom: 7px;
+    right: 15px;
+    opacity: 1;
+}
+
+.btn-13:active{
+    font-size: 15px;
+}
+
+/* boton 14 */
+
+
+.btn-14{
+    position: relative;
+    background-color: #221525;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+.btn-14-nieve-1,  .btn-14-nieve-2,
+.btn-14-nieve-3,  .btn-14-nieve-4,
+.btn-14-nieve-5,  .btn-14-nieve-6,
+.btn-14-nieve-7,  .btn-14-nieve-8{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.719);
+    border-radius: 50%;
+    transition: opacity .35s linear;
+    opacity: 0;
+}
+
+.btn-14:hover .btn-14-nieve-1,
+.btn-14:hover .btn-14-nieve-2,
+.btn-14:hover .btn-14-nieve-3,
+.btn-14:hover .btn-14-nieve-4,
+.btn-14:hover .btn-14-nieve-5,
+.btn-14:hover .btn-14-nieve-6,
+.btn-14:hover .btn-14-nieve-7,
+.btn-14:hover .btn-14-nieve-8 {
+    opacity: 1;
+}
+
+
+
+
+.btn-14-nieve-1{  
+    top: -7px;
+    left: 120px;
+    width: 5px;
+    height: 5px;
+}
+
+.btn-14-nieve-1{
+    animation: btn-14-caida-nieve 2s linear infinite;
+}
+
+
+.btn-14-nieve-2{
+    top: -7px;
+    left: 40px;
+    width: 5px;
+    height: 5px;
+}
+
+.btn-14-nieve-2{
+    animation: btn-14-caida-nieve 2.5s linear infinite;
+    
+}
+
+
+.btn-14-nieve-3{
+    top: -7px;
+    left: 180px;
+    width: 7px;
+    height: 7px;
+}
+
+.btn-14-nieve-3{
+    animation: btn-14-caida-nieve 1.5s linear infinite;
+    animation-delay: .5s;
+}
+
+
+.btn-14-nieve-4{
+    top: -7px;
+    left: 90px;
+    width: 7px;
+    height: 7px;
+}
+
+.btn-14-nieve-4{
+    animation: btn-14-caida-nieve 2s linear infinite;
+}
+
+
+.btn-14-nieve-5{
+    top: -7px;
+    left: 50px;
+    width: 5px;
+    height: 5px;
+}
+
+.btn-14-nieve-5{
+    animation: btn-14-caida-nieve 2.5s linear infinite;
+    animation-delay: .2s;
+}
+
+
+.btn-14-nieve-6{
+    top: -7px;
+    left: 160px;
+    width: 5px;
+    height: 5px;
+}
+
+.btn-14-nieve-6{
+    animation: btn-14-caida-nieve 1.5s linear infinite;
+}
+
+
+.btn-14-nieve-7{
+    top: -7px;
+    left: 20px;
+    width: 7px;
+    height: 7px;
+}
+
+.btn-14-nieve-7{
+    animation: btn-14-caida-nieve 2s linear infinite;
+    animation-delay: 1s;
+}
+
+
+.btn-14-nieve-8{
+    top: -7px;
+    left: 200px;
+    width: 7px;
+    height: 7px;
+}
+
+.btn-14-nieve-8{
+    animation: btn-14-caida-nieve 2.5s linear infinite;
+    animation-delay: .3s;
+}
+
+@keyframes btn-14-caida-nieve{
+    0%{
+        transform: translate(0px, 0px);
+    }
+
+    100%{
+        transform: translate(-30px, 70px);
+    }
+}
+
+
+/* boton 15 */
+
+
+.btn-15{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3e39aa;
+    border-radius: 50px;
+    transition: all .5s ease-in-out;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+}
+
+.btn-15-contenido{
+    background: none;
+    transition: all .7s ease-in-out;
+}
+
+
+.btn-15:hover{
+    position: relative;
+    background-color: #3830d2;
+    transform: translateY(-15px);
+    box-shadow: 0px 0px 20px #3830d2;
+}
+
+.btn-15:hover .btn-15-contenido{
+    position: relative;
+    transform: translateY(-3px);
+}
+
+
+/* boton 16 */
+
+.btn-16-contenedor{
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-16{
+    position: relative;
+    background-color: #09569e;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    transition: all .5s ease;
+}
+
+
+
+.btn-16-contenido{
+    background: none;
+    transition: all .5s ease;
+}
+
+
+.btn-16:hover{
+    height: 10px;
+    background-color: #053b6e;
+}
+
+.btn-16:hover .btn-16-contenido{
+    transform: translateY(-30px)
+    rotateX(0deg);
+    font-size: 18px;
+    letter-spacing: 14px;
+    text-shadow: 0px 0px 20px white,0px 0px 20px rgb(17, 204, 229);
+}
+
+
+
+@media (max-width: 719px){
+
+    body{
+        overflow: auto;
+    }
+
+   .contenedor{
+        margin: 40px 50px;
+    }
+
+    .decoracion-pagina-1{
+        width: 120px;
+        height: 120px;
+        left: 20px;
+        top: 100px;
+    }
+
+    .decoracion-pagina-2{
+        left: 10px;
+        top: 850px;
+    }
+
+    .decoracion-pagina-3{
+        width: 180px;
+        height: 180px;
+        left: 120px;
+        top: 450px;
+    }
+
+}
+
+@media(min-width: 720px) and (max-width:1299px){
+
+    .contenedor{
+        gap: 250px 100px;
+    }
+
+    .decoracion-pagina-1{
+        width: 240px;
+        height: 240px;
+        left: 40px;
+        top: 20px;
+    }
+
+    .decoracion-pagina-2{
+        left: 370px;
+        top: 400px;
+    }
+
+    .decoracion-pagina-3{
+        width: 300px;
+        height: 300px;
+        left: 100px;
+        top: 1000px;
+    }
+}
+
+@media(min-width: 1300px) and (max-width: 1919px){
+
+    .contenedor{
+        gap: 250px 100px;
+    }
+
+    .decoracion-pagina-1{
+        width: 240px;
+        height: 240px;
+        left: 60px;
+        top: 60px;
+    }
+
+    .decoracion-pagina-2{
+        left: 1000px;
+        top: 200px;
+    }
+
+    .decoracion-pagina-3{
+        width: 300px;
+        height: 300px;
+        left: 500px;
+        top: 400px;
+    }
+
+
+}
+
+@media (min-width: 1920px){
+
+    .contenedor{
+        gap: 260px 350px;
+        margin: auto 50px;
+    }
+
+
+    .decoracion-pagina-1{
+        left: 300px;
+    }
+    
+    .decoracion-pagina-2{
+        left: auto;
+        right: 200px;
+        top: 300px;
+    }
+    
+    .decoracion-pagina-3{
+        left: 900px;
+        top: 700px;
+    }
+    
+}
